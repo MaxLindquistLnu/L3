@@ -1,8 +1,10 @@
-function App() {
+import CipherTool from "./components/cipherTool/cipherTool"
 
+function App() {
   return (
     <div>
-      <h1>Hello World</h1>
+      <h1>Welcome to the Cipher Tool</h1>
+      <CipherTool />
     </div>
   )
 }
