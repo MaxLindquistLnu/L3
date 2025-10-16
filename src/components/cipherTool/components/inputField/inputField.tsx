@@ -1,8 +1,9 @@
 import React from 'react';
+import './inputField.css';
 
-function InputField(props: React.InputHTMLAttributes<HTMLInputElement>) {
+function InputField(props: React.InputHTMLAttributes<HTMLTextAreaElement>) {
     return (
-        <input
+        <textarea
             {...props}
             className="input-field"
         />

@@ -1,0 +1,19 @@
+.output-field {
+    width: 30%;
+    min-height: 200px;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+    color: #222;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    resize: none;
+    margin-top: 8px;
+    transition: border-color 0.2s;
+}
+
+.output-field:focus {
+    border-color: #0078d4;
+    outline: none;
+}
