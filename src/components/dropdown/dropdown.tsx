@@ -18,7 +18,7 @@ function Dropdown(props: DropdownProps) {
         <div className="mydict">
 	        <div>
 		        <label>
-			        <input type="radio" name="radio"/>
+			        <input type="radio" name="radio" defaultChecked/>
 			        <span>Encode</span>
 		        </label>
 		        <label>
