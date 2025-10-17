@@ -1,0 +1,28 @@
+.dropdown {
+    background-color: #1B3C53;
+    color: #D2C1B6;
+    border: 1px solid #234C6A;
+    border-radius: 6px;
+    padding: 0.6em 1.4em;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    box-shadow: 0 2px 8px rgba(35, 76, 106, 0.08);
+    outline: none;
+}
+
+.dropdown:hover {
+    background-color: #234C6A;
+    border-color: #2A5A7A;
+}
+
+.dropdown:focus {
+    border-color: #3A6A8A;
+    box-shadow: 0 0 0 3px rgba(35, 76, 106, 0.2);
+}
+
+.dropdown option {
+    background-color: #1B3C53;
+    color: #D2C1B6;
+}
