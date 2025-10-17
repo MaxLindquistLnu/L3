@@ -1,20 +1,45 @@
-import './encodeOrDecodeOption.css'
+import React from 'react';
+import './encodeOrDecodeOption.css';
 
-function EncodeOrDecodeOption() {
-    return (
-            <div className="mydict">
-                <div>
-                    <label>
-                        <input type="radio" name="radio" defaultChecked/>
-                        <span>Encode</span>
-                    </label>
-                    <label>
-                        <input type="radio" name="radio"/>
-                        <span>Decode</span>
-                    </label>
-                </div>
-            </div>
-    )
+interface EncodeOrDecodeOptionProps {
+    value?: 'encode' | 'decode';
+    onChange?: (value: 'encode' | 'decode') => void;
 }
 
-export default EncodeOrDecodeOption
+function EncodeOrDecodeOption({ value, onChange }: EncodeOrDecodeOptionProps) {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (onChange) {
+            onChange(e.target.value as 'encode' | 'decode');
+        }
+    };
+
+    return (
+        <div className="encode-decode-container">
+            <div className="encode-decode-options">
+                <label className="encode-decode-label">
+                    <input 
+                        type="radio" 
+                        name="encode-decode" 
+                        value="encode"
+                        checked={value === 'encode'}
+                        onChange={handleChange}
+                        defaultChecked={value === undefined}
+                    />
+                    <span>Encode</span>
+                </label>
+                <label className="encode-decode-label">
+                    <input 
+                        type="radio" 
+                        name="encode-decode" 
+                        value="decode"
+                        checked={value === 'decode'}
+                        onChange={handleChange}
+                    />
+                    <span>Decode</span>
+                </label>
+            </div>
+        </div>
+    );
+}
+
+export default EncodeOrDecodeOption;
