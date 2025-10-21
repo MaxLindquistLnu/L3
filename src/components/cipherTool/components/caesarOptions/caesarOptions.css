@@ -1,13 +1,12 @@
 .caesar-options {
     display: flex;
     align-items: center;
-    gap: 1rem;
     padding: 1rem;
 }
 
 .caesar-options label {
     font-weight: 600;
-    color: #1B3C53;
+    color: #D2C1B6;
 }
 
 .shift-control {

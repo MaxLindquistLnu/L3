@@ -14,6 +14,8 @@ function Dropdown(props: DropdownProps) {
     const { options, ...rest } = props;
     
     return (
+        <div className="dropdown-container">
+            Cipher Method:
         <select {...rest} className="dropdown">
             {options.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -21,6 +23,7 @@ function Dropdown(props: DropdownProps) {
                 </option>
             ))}
         </select>
+        </div>
     );
 }
 
