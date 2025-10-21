@@ -3,6 +3,8 @@ import InputField from './components/inputField/inputField'
 import OutputField from './components/outputField/outputField'
 import EncodeOrDecodeOption from '../encodeOrDecodeOption/encodeOrDecodeOption'
 import DropDown from '../dropdown/dropdown'
+import VigenereOptions from './components/vigenereOptions/vigenereOptions'
+import CaesarOptions from './components/caesarOptions/caesarOptions'
 import { Cipher } from '../../cipherModule/Cipher'
 import './cipherTool.css'
 
@@ -53,6 +55,11 @@ function CipherTool() {
         value={selectedCipher}
         onChange={(e) => setSelectedCipher(e.target.value)}
       />
+
+      {selectedCipher === 'vigenere' && <VigenereOptions />}
+
+      {selectedCipher === 'caesar' && <CaesarOptions />}
+
       </div>
       <OutputField 
         value={outputText}

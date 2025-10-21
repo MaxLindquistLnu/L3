@@ -60,7 +60,6 @@
     box-shadow: 0 0 0 3px rgba(35, 76, 106, 0.2);
 }
 
-/* Remove default number input arrows */
 .shift-input::-webkit-outer-spin-button,
 .shift-input::-webkit-inner-spin-button {
     -webkit-appearance: none;
