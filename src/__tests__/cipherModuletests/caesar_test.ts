@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 /// <reference lib="deno.ns" />
 import { assertEquals } from "jsr:@std/assert";
 import { Cipher } from "../../cipherModule/Cipher";

@@ -48,7 +48,6 @@ function CipherTool() {
         default:
           result = ''
       }
-      console.log(result)
       setOutputText(result)
     }
   }, [cipherMode, inputText, vigenereKeyword, caesarShift, selectedCipher])
