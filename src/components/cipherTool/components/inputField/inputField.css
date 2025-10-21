@@ -1,6 +1,14 @@
+.input-field-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    width: 40%;
+}
+
 .input-field {
-    width: 30%;
-    min-height: 200px;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    min-height: 250px;
     padding: 12px 16px;
     font-size: 1.1rem;
     color: #222;
@@ -11,6 +19,7 @@
     resize: none;
     margin-top: 8px;
     transition: border-color 0.2s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0);
 }
 
 .input-field:focus {

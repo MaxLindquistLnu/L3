@@ -3,10 +3,13 @@ import './inputField.css';
 
 function InputField(props: React.InputHTMLAttributes<HTMLTextAreaElement>) {
     return (
-        <textarea
-            {...props}
-            className="input-field"
-        />
+    <div className="input-field-container">
+      <h3>Plain text</h3>
+      <textarea
+          {...props}
+          className="input-field"
+      />
+    </div>
     );
 }
 

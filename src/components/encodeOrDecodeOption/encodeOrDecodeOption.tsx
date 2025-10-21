@@ -23,7 +23,6 @@ function EncodeOrDecodeOption({ value, onChange }: EncodeOrDecodeOptionProps) {
                         value="encode"
                         checked={value === 'encode'}
                         onChange={handleChange}
-                        defaultChecked={value === undefined}
                     />
                     <span>Encode</span>
                 </label>

@@ -9,6 +9,8 @@ import { Cipher } from '../../cipherModule/Cipher'
 import './cipherTool.css'
 
 function CipherTool() {
+  const [vigenereKeyword, setVigenereKeyword] = useState('')
+  const [caesarShift, setCaesarShift] = useState(3)
   const [cipherMode, setCipherMode] = useState<'encode' | 'decode'>('encode')
   const [selectedCipher, setSelectedCipher] = useState('caesar')
   const [inputText, setInputText] = useState('')
@@ -23,15 +25,44 @@ function CipherTool() {
   useEffect(() => {
     if (inputText) {
       const cipher = new Cipher()
-      const result = cipherMode === 'encode'
-        ? cipher.encryptCaesar(3, inputText)
-        : cipher.decryptCaesar(3, inputText)
+      let result = ''
+      
+      switch (selectedCipher) {
+        case 'caesar':
+          result = cipherMode === 'encode'
+            ? cipher.encryptCaesar(caesarShift, inputText)
+            : cipher.decryptCaesar(caesarShift, inputText)
+          break
+
+        case 'vigenere':
+          result = cipherMode === 'encode'
+            ? cipher.encryptVigenere(vigenereKeyword, inputText)
+            : cipher.decryptVigenere(vigenereKeyword, inputText)
+          break
+
+        case 'atbash':
+          result = cipherMode === 'encode'
+            ? cipher.encryptAtbash(inputText)
+            : cipher.decryptAtbash(inputText)
+          break
+        default:
+          result = ''
+      }
+      console.log(result)
       setOutputText(result)
     }
-  }, [cipherMode, inputText])
+  }, [cipherMode, inputText, vigenereKeyword, caesarShift, selectedCipher])
 
   const handleCipherModeChange = (cipherMode: 'encode' | 'decode') => {
     setCipherMode(cipherMode)
+  }
+
+  const handleVigenereKeywordChange = (value: string) => {
+    setVigenereKeyword(value)
+  }
+
+  const handleCaesarShiftChange = (value: number) => {
+    setCaesarShift(value)
   }
 
   const handleInputChange = (value: string) => {
@@ -56,9 +87,19 @@ function CipherTool() {
         onChange={(e) => setSelectedCipher(e.target.value)}
       />
 
-      {selectedCipher === 'vigenere' && <VigenereOptions />}
+      {selectedCipher === 'vigenere' && (
+        <VigenereOptions 
+          keyword={vigenereKeyword}
+          onKeywordChange={handleVigenereKeywordChange}
+        />
+      )}
 
-      {selectedCipher === 'caesar' && <CaesarOptions />}
+      {selectedCipher === 'caesar' && (
+        <CaesarOptions 
+          shift={caesarShift}
+          onShiftChange={handleCaesarShiftChange}
+        />
+      )}
 
       </div>
       <OutputField 

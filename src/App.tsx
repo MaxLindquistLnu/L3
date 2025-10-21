@@ -1,4 +1,5 @@
 import CipherTool from "./components/cipherTool/cipherTool"
+import './app.css'
 
 function App() {
   return (

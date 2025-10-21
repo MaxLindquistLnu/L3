@@ -1,26 +1,24 @@
-import { useState } from 'react';
 import './caesarOptions.css'
 
-function CaesarOptions() {
-    const [shift, setShift] = useState(3);
+interface CaesarOptionsProps {
+    shift: number;
+    onShiftChange: (shift: number) => void;
+}
 
+function CaesarOptions({ shift, onShiftChange }: CaesarOptionsProps) {
     const handleIncrement = () => {
-        if (isNaN(shift)) {
-            setShift(0);
-        }
-        setShift(prev => prev + 1);
+        const newShift = isNaN(shift) ? 1 : shift + 1;
+        onShiftChange(newShift);
     };
 
     const handleDecrement = () => {
-        if (isNaN(shift)) {
-            setShift(0);
-        }
-        setShift(prev => prev - 1);
+        const newShift = isNaN(shift) ? -1 : shift - 1;
+        onShiftChange(newShift);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = parseInt(e.target.value);
-        setShift(value);
+        onShiftChange(value);
     };
 
     return (
