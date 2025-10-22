@@ -7,7 +7,6 @@
 
 .caesar-options label {
     font-weight: 600;
-    color: #D2C1B6;
 }
 
 .shift-control {
@@ -18,7 +17,7 @@
 
 .shift-button {
     background-color: #1B3C53;
-    color: #D2C1B6;
+    color: white;
     border: none;
     border-radius: 6px;
     width: 2.5rem;
@@ -43,7 +42,6 @@
 
 .shift-input {
     background-color: #ffffff;
-    color: #1B3C53;
     border: 2px solid #1B3C53;
     border-radius: 6px;
     padding: 0.5rem;

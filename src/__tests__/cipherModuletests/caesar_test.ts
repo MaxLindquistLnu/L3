@@ -182,6 +182,20 @@ Deno.test("Caesar Cipher - Decrypt with shift 0", () => {
   assertEquals(result, "HELLO WORLD");
 });
 
+// Shift equals alphabet length (identity)
+Deno.test("Caesar Cipher - Encrypt with shift 26 (full rotation)", () => {
+  const cipher = new Cipher();
+  const result = cipher.encryptCaesar(26, "HELLO WORLD");
+  assertEquals(result, "HELLO WORLD");
+});
+
+// Unicode/Emoji preservation
+Deno.test("Caesar Cipher - Encrypt preserves emoji", () => {
+  const cipher = new Cipher();
+  const result = cipher.encryptCaesar(3, "HELLO 🎉 WORLD");
+  assertEquals(result, "KHOOR 🎉 ZRUOG");
+});
+
 // Round-trip Tests
 Deno.test("Caesar Cipher - Round-trip encrypt then decrypt", () => {
   const cipher = new Cipher();

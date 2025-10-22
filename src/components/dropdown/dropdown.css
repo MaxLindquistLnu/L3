@@ -1,6 +1,6 @@
 .dropdown {
+    color: white;
     background-color: #1B3C53;
-    color: #D2C1B6;
     border: 1px solid #234C6A;
     border-radius: 6px;
     padding: 0.6em 1.4em;
@@ -18,8 +18,8 @@
 }
 
 .dropdown option {
+    color: white;
     background-color: #1B3C53;
-    color: #D2C1B6;
 }
 
 :focus {

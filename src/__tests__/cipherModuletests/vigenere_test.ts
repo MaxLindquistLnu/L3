@@ -221,3 +221,10 @@ Deno.test("Vigenere Cipher - Decrypt complex sentence", () => {
   assertEquals(result, "MEET ME AT THE PARK");
 });
 
+// Unicode/Emoji preservation
+Deno.test("Vigenere Cipher - Encrypt preserves emoji", () => {
+  const cipher = new Cipher();
+  const result = cipher.encryptVigenere("KEY", "HELLO 🎉 WORLD");
+  assertEquals(result, "RIJVS 🎉 UYVJN");
+});
+

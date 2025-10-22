@@ -242,3 +242,10 @@ Deno.test("Atbash Cipher - Check if any letters are self-encrypting", () => {
   assertEquals(result, "ZYXWVUTSRQPONMLKJIHGFEDCBA");
 });
 
+// Unicode/Emoji preservation
+Deno.test("Atbash Cipher - Encrypt preserves emoji", () => {
+  const cipher = new Cipher();
+  const result = cipher.encryptAtbash("HELLO 🎉 WORLD");
+  assertEquals(result, "SVOOL 🎉 DLIOW");
+});
+

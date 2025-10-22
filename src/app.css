@@ -4,5 +4,12 @@ div {
     text-align: center;
     height: auto;
     align-items: center;
+    justify-content: center;
     color: aliceblue;
+}
+
+.information-card-container {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
 }

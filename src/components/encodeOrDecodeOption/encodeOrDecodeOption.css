@@ -31,9 +31,6 @@
     height: 0;
 }
 
-.encode-decode-label input[type="radio"]:checked + span {
-    color: #D2C1B6;
-}
 
 .encode-decode-label input[type="radio"]:checked ~ span::before {
     opacity: 1;
@@ -41,7 +38,7 @@
 
 .encode-decode-label:has(input[type="radio"]:checked) {
     background-color: #1B3C53;
-    color: #D2C1B6;
+    color: white;
     box-shadow: 0 2px 8px rgba(35, 76, 106, 0.2);
 }
 
